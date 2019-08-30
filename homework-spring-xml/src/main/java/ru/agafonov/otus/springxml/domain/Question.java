@@ -7,7 +7,6 @@ public class Question {
     @CsvBindByName(column = "Text Question")
     private String text;
 
-
     @CsvBindByName(column = "Answer")
     private String answer;
 
@@ -18,5 +17,4 @@ public class Question {
     public String getAnswer() {
         return this.answer;
     }
-
 }

@@ -12,37 +12,20 @@ import java.util.List;
 
 @Slf4j
 public class QuestionCsvLoaderService implements QuestionLoaderService {
-
-
     private String pathToCsv;
-
     public QuestionCsvLoaderService(String pathToCsv) {
         this.pathToCsv = pathToCsv;
     }
 
-    public List<Question> getListQuestion() {
-
+    public List<Question> loadCsv() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(pathToCsv);
         InputStreamReader reader = new InputStreamReader(inputStream);
-
-        List<Question> listQuestion = new CsvToBeanBuilder(reader)
+        List<Question> listQuestions = new CsvToBeanBuilder(reader)
                 .withType(Question.class)
                 .build()
                 .parse();
-
-
-        for (Question question : listQuestion) {
-
-            log.info("Вопрос {}\n", question.getText());
-            log.info("Ответ {}\n", question.getAnswer());
-
-        }
-        return listQuestion;
-
-
+        return listQuestions;
     }
-
-
 }
 
 
