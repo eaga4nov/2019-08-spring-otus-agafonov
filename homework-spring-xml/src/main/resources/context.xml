@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="questionLoaderService" class="ru.agafonov.otus.springxml.service.QuestionCsvLoaderService">
+    <bean id="questionLoaderService" class="ru.agafonov.otus.springxml.service.impl.QuestionCsvLoaderService">
         <constructor-arg name="pathToCsv" value="question-list.csv"/>
 
     </bean>
-    <bean id="questionService" class="ru.agafonov.otus.springxml.service.QuestionServiceImpl">
+    <bean id="questionService" class="ru.agafonov.otus.springxml.service.impl.QuestionServiceImpl">
         <constructor-arg name="loader" ref="questionLoaderService"/>
 
     </bean>
