@@ -8,7 +8,7 @@
         <constructor-arg name="pathToCsv" value="question-list.csv"/>
 
     </bean>
-    <bean id="questionService" class="ru.agafonov.otus.springxml.service.impl.SurveyServiceImpl">
+    <bean id="surveyService" class="ru.agafonov.otus.springxml.service.impl.SurveyServiceImpl">
         <constructor-arg name="loader" ref="questionLoaderService"/>
 
     </bean>
