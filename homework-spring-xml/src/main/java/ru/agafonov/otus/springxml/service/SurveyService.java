@@ -5,8 +5,9 @@ import ru.agafonov.otus.springxml.domain.Question;
 import java.io.IOException;
 import java.util.List;
 
-public interface QuestionService {
-    List<Question> getQuestions()throws IOException;
+public interface SurveyService {
 
-    void askingQuestions()throws IOException;
+    List<Question> getQuestions() throws IOException;
+
+    void startSurvey() throws IOException;
 }

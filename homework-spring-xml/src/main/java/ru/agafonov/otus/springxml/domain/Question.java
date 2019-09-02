@@ -1,4 +1,5 @@
 package ru.agafonov.otus.springxml.domain;
+
 import com.opencsv.bean.CsvBindByName;
 
 public class Question {
@@ -14,4 +15,12 @@ public class Question {
     }
 
     public String getAnswer() { return this.answer; }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }
