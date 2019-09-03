@@ -13,7 +13,7 @@ import java.util.Scanner;
 @Slf4j
 public class SurveyServiceImpl implements SurveyService {
 
-    private static final String HIDDEN_LETTERS = "[аоейуия]";
+    private static final String HIDDEN_LETTERS = "[аоейкруия]";
     private static final String RUSSIA_LETTERS = "([а-яА-Я]+)";
     private static final String HIDING_SYMBOL = "*";
     private static final String NOT_WRITE_IN_RUSSIAN = "Ответ к сожалению не понятен, напишите пожалуйста по Русски";
@@ -33,10 +33,9 @@ public class SurveyServiceImpl implements SurveyService {
 
     @Override
     public void startSurvey() throws IOException {
-        try (Scanner in = new Scanner(System.in)) {
-            askUserData(in);
-            askQuestions(in, getQuestions());
-        }
+        Scanner in = new Scanner(System.in);
+        askUserData(in);
+        askQuestions(in, getQuestions());
     }
 
     private void askUserData(Scanner in) {
