@@ -20,7 +20,7 @@ public class SurveyServiceImpl implements SurveyService {
     private static final String ENTER_YOU_NAME = "Укажите Ваше имя";
     private static final String ENTER_YOU_LAST_NAME = "Укажите Вашу фамилию";
 
-    private QuestionLoaderService loader;
+    private final QuestionLoaderService loader;
 
     public SurveyServiceImpl(QuestionLoaderService loader) {
         this.loader = loader;
