@@ -2,6 +2,8 @@
 package ru.agafonov.otus.springannotation.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.agafonov.otus.springannotation.domain.Question;
 import ru.agafonov.otus.springannotation.service.QuestionLoaderService;
 import ru.agafonov.otus.springannotation.service.SurveyService;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @Slf4j
+@Service
 public class SurveyServiceImpl implements SurveyService {
 
     private static final String HIDDEN_LETTERS = "[аоейкруия]";
@@ -22,6 +25,7 @@ public class SurveyServiceImpl implements SurveyService {
 
     private final QuestionLoaderService loader;
 
+    @Autowired
     public SurveyServiceImpl(QuestionLoaderService loader) {
         this.loader = loader;
     }

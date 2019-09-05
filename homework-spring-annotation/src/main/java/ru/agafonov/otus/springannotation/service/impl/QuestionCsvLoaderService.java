@@ -2,6 +2,8 @@ package ru.agafonov.otus.springannotation.service.impl;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import ru.agafonov.otus.springannotation.domain.Question;
 import ru.agafonov.otus.springannotation.service.QuestionLoaderService;
 
@@ -11,10 +13,12 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 @Slf4j
+@Service
 public class QuestionCsvLoaderService implements QuestionLoaderService {
     private String pathToCsv;
 
-    public QuestionCsvLoaderService(String pathToCsv) {
+
+    public QuestionCsvLoaderService(@Value("${app.csv.path}") String pathToCsv) {
         this.pathToCsv = pathToCsv;
     }
 
@@ -28,7 +32,3 @@ public class QuestionCsvLoaderService implements QuestionLoaderService {
         }
     }
 }
-
-
-
-
