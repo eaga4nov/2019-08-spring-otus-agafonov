@@ -1,25 +1,19 @@
 package ru.agafonov.otus.springboot.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import ru.agafonov.otus.springboot.localization.LocalizationService;
 import ru.agafonov.otus.springboot.localization.impl.LocalizationServiceImpl;
 
-import java.util.Locale;
-
 @Configuration
 public class LocalizationServiceConfig {
 
     @Bean
-    public LocalizationService localizationService(@Value("${survey.country}") String country,
-                                                   @Value("${survey.language}") String language,
-                                                   @Value("${survey.resource-name}") String sourceName) {
-        Locale locale = new Locale(language, country);
+    public LocalizationService localizationService(ApplicationConfig applicationConfig) {
         ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
         ms.setBasename("/i18n/bundle");
         ms.setDefaultEncoding("UTF-8");
-        return new LocalizationServiceImpl(ms, locale, sourceName);
+        return new LocalizationServiceImpl(ms, applicationConfig.getLocale(), applicationConfig.getSourceName());
     }
 }

@@ -3,8 +3,8 @@ package ru.agafonov.otus.springboot.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import ru.agafonov.otus.springboot.config.ApplicationConfig;
 import ru.agafonov.otus.springboot.domain.Question;
 import ru.agafonov.otus.springboot.localization.LocalizationService;
 import ru.agafonov.otus.springboot.service.QuestionLoaderService;
@@ -39,9 +39,9 @@ public class SurveyServiceImpl implements SurveyService {
     @Autowired
     public SurveyServiceImpl(QuestionLoaderService loader,
                              LocalizationService localization,
-                             @Value("#{T(java.lang.Integer).parseInt('${survey.number-answer-to-pass}')}") Integer numberCorrectAnswerToPassSurvey) {
+                             ApplicationConfig applicationConfig) {
 
-        this.numberCorrectAnswerToPassSurvey = numberCorrectAnswerToPassSurvey;
+        this.numberCorrectAnswerToPassSurvey = applicationConfig.getNumberCorrectAnswerToPassSurvey();
         this.loader = loader;
         this.localization = localization;
     }
