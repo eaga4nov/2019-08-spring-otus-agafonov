@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface QuestionLoaderService {
 
-    List<Question> loadCsv() throws IOException;
+    List<Question> loadCsv(String resourceName) throws IOException;
 }

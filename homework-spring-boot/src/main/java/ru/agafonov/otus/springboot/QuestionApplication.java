@@ -1,9 +1,9 @@
 package ru.agafonov.otus.springboot;
 
-import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.*;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import ru.agafonov.otus.springboot.service.SurveyService;
 
 import java.io.IOException;
@@ -17,18 +17,5 @@ public class QuestionApplication {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(QuestionApplication.class);
         SurveyService questionService = context.getBean(SurveyService.class);
         questionService.startSurvey();
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
-
-    @Bean
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
-        ms.setBasename("/i18n/bundle");
-        ms.setDefaultEncoding("UTF-8");
-        return ms;
     }
 }
