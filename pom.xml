@@ -10,6 +10,7 @@
     <modules>
         <module>homework-spring-xml</module>
         <module>homework-spring-annotation</module>
+        <module>homework-spring-boot</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
