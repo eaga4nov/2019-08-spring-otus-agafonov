@@ -1,0 +1,1 @@
+Spring application using annotation context configuration
