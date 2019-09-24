@@ -9,7 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("survey")
 public class ApplicationProperties {
 
-    private String resourceName;
     private String language;
     private String country;
     private int numberAnswerToPass;

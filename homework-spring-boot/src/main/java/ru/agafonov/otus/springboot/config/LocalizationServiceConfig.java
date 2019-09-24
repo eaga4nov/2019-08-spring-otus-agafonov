@@ -14,6 +14,6 @@ public class LocalizationServiceConfig {
         ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
         ms.setBasename("/i18n/bundle");
         ms.setDefaultEncoding("UTF-8");
-        return new LocalizationServiceImpl(ms, applicationConfig.getLocale(), applicationConfig.getSourceName());
+        return new LocalizationServiceImpl(ms, applicationConfig.getLocale());
     }
 }

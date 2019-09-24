@@ -10,11 +10,9 @@ import java.util.Locale;
 public class ApplicationConfig {
     private Locale locale;
     private int numberCorrectAnswerToPassSurvey;
-    private String sourceName;
 
     public ApplicationConfig(ApplicationProperties properties) {
         this.locale = new Locale(properties.getLanguage(), properties.getCountry());
         this.numberCorrectAnswerToPassSurvey = properties.getNumberAnswerToPass();
-        this.sourceName = properties.getResourceName();
     }
 }
