@@ -14,13 +14,7 @@ public class Question {
         return this.text;
     }
 
-    public String getAnswer() { return this.answer; }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public String getAnswer() {
+        return this.answer;
     }
 }
