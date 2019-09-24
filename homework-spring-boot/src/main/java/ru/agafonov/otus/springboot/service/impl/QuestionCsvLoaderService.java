@@ -1,7 +1,6 @@
 package ru.agafonov.otus.springboot.service.impl;
 
 import com.opencsv.bean.CsvToBeanBuilder;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.agafonov.otus.springboot.domain.Question;
 import ru.agafonov.otus.springboot.service.QuestionLoaderService;
@@ -12,7 +11,6 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Slf4j
 @Service
 public class QuestionCsvLoaderService implements QuestionLoaderService {
 
