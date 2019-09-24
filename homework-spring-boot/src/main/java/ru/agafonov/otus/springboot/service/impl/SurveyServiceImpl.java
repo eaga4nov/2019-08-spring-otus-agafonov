@@ -31,6 +31,7 @@ public class SurveyServiceImpl implements SurveyService {
     private static final String NOT_CORRECT_ANSWER_MESSAGE = "question.message.not-correct-answer-accept";
     private static final String NOT_PASSED_SURVEY_MESSAGE = "question.message.not-passed-survey";
     private static final String CURRENT_LOCALE = "question.message.current-locale";
+    private static final String QUESTION_RESOURCE_FILE="question.message.filename";
 
     private final QuestionLoaderService loader;
     private Integer numberCorrectAnswerToPassSurvey;
@@ -56,8 +57,7 @@ public class SurveyServiceImpl implements SurveyService {
 
     @Override
     public List<Question> getQuestions() throws IOException {
-        log.debug(localization.getLocalizedQuestionResource());
-        return loader.loadCsv(localization.getLocalizedQuestionResource());
+        return loader.loadCsv(localization.getLocalizedMessage(QUESTION_RESOURCE_FILE));
     }
 
     private void askUserData(Scanner in) {
