@@ -1,8 +1,7 @@
 survey:
-  resource-name: question-list.csv
   number-answer-to-pass: 4
-  language: en
-  country: EN
+  language: ru
+  country: RU
 spring:
   output:
   ansi:
