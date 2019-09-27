@@ -1,0 +1,11 @@
+survey:
+  number-answer-to-pass: 4
+  language: en
+  country: EN
+spring:
+  output:
+  ansi:
+    enabled: ALWAYS
+  shell:
+    interactive:
+      enabled: true

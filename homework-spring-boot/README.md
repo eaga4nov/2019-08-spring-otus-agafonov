@@ -1,0 +1,1 @@
+Spring boot application using annotation context configuration
